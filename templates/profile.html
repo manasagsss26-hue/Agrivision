@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriVision - Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">🌱 AgriVision</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="category.html">Crops</a>
+      <a href="profile.html" class="active">Profile</a>
+      <a href="login.html" class="btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="profile card">
+    <h2>Your Profile</h2>
+
+    <!-- Profile Picture -->
+    <div class="profile-pic">
+      <img id="profileImage" src="https://www.shutterstock.com/image-vector/farmer-working-on-field-vector-260nw-2194804755.jpg" alt="Profile Picture">
+      <br>
+      <input type="file" id="profileUpload" accept="image/*" style="display:none" onchange="setProfileImage(event)">
+      <button class="primary-btn" onclick="document.getElementById('profileUpload').click()">📸 Change Picture</button>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="profile-info">
+      <p><strong>Name:</strong> Farmer User</p>
+      <p><strong>Email:</strong> user@example.com</p>
+      <p><strong>Location:</strong> Mysuru, India</p>
+      <p><strong>Crops:</strong> Paddy, Maize, Tomato</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 AgriVision | Made with ❤️ for Farmers</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

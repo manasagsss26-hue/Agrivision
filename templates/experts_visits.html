@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experts Visit</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* Common styling for all images */
+    .gallery img {
+      width: 280px;
+      height: 200px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* 🔹 First two images are horizontal → fit them fully */
+    .gallery img:first-child,
+    .gallery img:nth-child(2) {
+      object-fit: contain;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+
+    /* 🔹 Other images remain cropped neatly */
+    .gallery img:nth-child(n+3) {
+      object-fit: cover;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>Experts Visit</header>
+
+  <div class="container">
+    <h2>About the Expert Visit</h2>
+    <p>
+      This section highlights the expert lectures, industrial visits, and interactive sessions conducted by professionals in various engineering fields. These visits help bridge the gap between theoretical learning and real-world industry practices.
+    </p>
+
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <!-- 🔹 Add your images here -->
+    
+      <img src="exp1.jpg" alt="Expert Visit 3">
+      <img src="exp2.jpg" alt="Expert Visit 4">
+      <img src="exp3.jpg" alt="Expert Visit 5">
+      <img src="exp4.jpg" alt="Expert Visit 6">
+    </div>
+  </div>
+
+  <footer>© 2025 Department of Electrical and Electronics Engineering | GSSSIETW Mysuru</footer>
+</body>
+</html>

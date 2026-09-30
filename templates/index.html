@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriVision - Home</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Your existing CSS remains the same */
+    body.homepage {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background: url("https://i.ytimg.com/vi/ui2C0wWiqBc/hq720.jpg") no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+    }
+    body.homepage::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 30px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 0 0 15px 15px;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a8ff78, #78ffd6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      font-size: 1rem;
+      margin-top: 8px;
+      color: #d4ffd9;
+      font-style: italic;
+    }
+    .section-box {
+      text-align: center;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .section-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ffd700, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .menu-item {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      margin: 12px auto;
+      max-width: 400px;
+      transition: 0.3s;
+    }
+    .menu-item:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: translateY(-3px);
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px 15px 0 0;
+      font-size: 14px;
+    }
+
+    /* Upload Section */
+    .upload-section {
+      margin: 40px auto;
+      max-width: 650px;
+      padding: 30px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .upload-title {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00ffa3, #00e1ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    .upload-box {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .upload-input {
+      margin: 20px auto;
+      padding: 10px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 10px;
+      border: none;
+      width: 80%;
+      color: white;
+    }
+    .upload-btn {
+      background: linear-gradient(90deg, #9cff6e, #00e676);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .upload-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00e676;
+    }
+  </style>
+
+</head>
+
+<body class="homepage">
+
+  <header class="header">
+    <div class="logo">🌱 AgriVision</div>
+    <div class="tagline">Empowering seeds with the power of cold plasma — A GSSSIETW Initiative</div>
+  </header>
+
+  <section class="section-box">
+    <h2>Welcome to GSSS AgriVision</h2>
+    <h3>Mysuru, India</h3>
+    <p>Weather: <span id="weather">29°C ☀</span></p>
+  </section>
+
+  <section class="section-box">
+    <h2>Our Vision</h2>
+    <p>To revolutionize agriculture through intelligent technology...</p>
+    <br>
+    <h2>Our Mission</h2>
+    <p>To bridge the gap between technology and agriculture...</p>
+  </section>
+
+  <section class="section-box">
+    <a href="gallery.html" style="text-decoration:none;color:inherit;">
+      <div class="menu-item">🖼 Gallery</div>
+    </a>
+  </section>
+
+  <section class="section-box">
+    <a href="aboutus.html" style="text-decoration:none;color:inherit;">
+      <div class="menu-item">ℹ About Us</div>
+    </a>
+  </section>
+
+  <section class="section-box">
+    <a href="plasma_lab.html" style="text-decoration:none;color:inherit;">
+      <div class="menu-item">⚡ Plasma Agri Lab</div>
+    </a>
+  </section>
+
+  <!-- 🌿🌿🌿 UPLOAD SECTION (unchanged) -->
+  <section class="upload-section">
+      <div class="upload-title">🌿 Plant Disease Recognition</div>
+
+      <div class="upload-box">
+          <form action="/upload/" method="POST" enctype="multipart/form-data">
+              <input type="file" name="img" accept="image/png, image/jpeg" required class="upload-input">
+              <br>
+              <button type="submit" class="upload-btn">Upload Image</button>
+          </form>
+      </div>
+  </section>
+
+  <!-- 🌿🌿🌿 ADDED RESULT SECTION (ONLY ADDITION — NOTHING REMOVED) -->
+  {% if result %}
+  <section class="section-box" style="background: rgba(0,0,0,0.65); margin-top: 20px;">
+      <h2>🌱 Prediction Result</h2>
+
+      <img src="{{ imagepath }}" alt="Uploaded Image"
+           style="width:300px;border-radius:12px;margin-top:15px;">
+
+      <h3 style="margin-top:15px;color:#a8ff78;">Predicted Disease:</h3>
+      <p style="font-size:1.3rem;font-weight:700;">{{ prediction }}</p>
+  </section>
+  {% endif %}
+  <!-- END RESULT SECTION -->
+
+
+  <footer>
+    <p>© 2025 AgriVision | Made with ❤ for Farmers</p>
+  </footer>
+
+</body>
+</html>

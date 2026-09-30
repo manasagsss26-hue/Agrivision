@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Components Available - Plasma Agri Lab</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #eafcff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      max-width: 700px;
+      color: #cfeeff;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 28px;
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 0 15px rgba(0, 114, 255, 0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 114, 255, 0.6);
+    }
+
+    .viewer {
+      display: none;
+      width: 90%;
+      max-width: 800px;
+      height: 550px;
+      margin-top: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #b6eaff;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Components Available</h1>
+    <p>
+      View and download the list of components available in the Plasma Agri Lab.
+      Click the button below to download or preview the PDF.
+    </p>
+  </header>
+
+  <!-- Download Button -->
+  <button id="downloadBtn" class="btn">📄 Download & View PDF</button>
+
+  <!-- Hidden Download Link -->
+  <a id="downloadLink" href="components_available.pdf" download style="display:none;">Download</a>
+
+  <!-- PDF Viewer -->
+  <div id="pdfViewer" class="viewer">
+    <iframe id="pdfFrame" src=""></iframe>
+  </div>
+
+  <footer>© 2025 Plasma Agri Lab | GSSSIETW Mysuru</footer>
+
+  <script>
+    const downloadBtn = document.getElementById("downloadBtn");
+    const downloadLink = document.getElementById("downloadLink");
+    const pdfViewer = document.getElementById("pdfViewer");
+    const pdfFrame = document.getElementById("pdfFrame");
+
+    downloadBtn.addEventListener("click", () => {
+      // Trigger PDF download
+      downloadLink.click();
+
+      // Display PDF preview below
+      pdfFrame.src = "components_available.pdf";
+      pdfViewer.style.display = "block";
+      pdfViewer.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>

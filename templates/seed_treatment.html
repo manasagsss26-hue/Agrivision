@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seed Treatment Report - Plasma Agri Lab</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #eafcff;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      max-width: 700px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      background: linear-gradient(90deg, #ffd700, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cfeeff;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 26px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 0 15px rgba(0, 114, 255, 0.4);
+      margin: 5px;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .loader {
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid #00c6ff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" id="card">
+    <h1>Seed Treatment Report (PDF)</h1>
+    <p>Access the official <strong>Seed Treatment Report</strong> from the Plasma Agri Lab.<br>
+      You can download or view it directly below.</p>
+    <button id="viewBtn" class="btn">👁️ View Report</button>
+    <a href="seed_treatment.pdf" download class="btn">⬇️ Download</a>
+  </div>
+
+  <div id="loader" class="loader"></div>
+  <iframe id="pdfFrame" src=""></iframe>
+
+  <script>
+    const viewBtn = document.getElementById("viewBtn");
+    const loader = document.getElementById("loader");
+    const pdfFrame = document.getElementById("pdfFrame");
+
+    viewBtn.onclick = () => {
+      loader.style.display = "block";
+      pdfFrame.style.display = "none";
+      setTimeout(() => {
+        loader.style.display = "none";
+        pdfFrame.src = "seed_treatment.pdf";
+        pdfFrame.style.display = "block";
+        viewBtn.textContent = "🔄 Refresh Report";
+      }, 1500); // Simulated loading delay
+    };
+  </script>
+</body>
+</html>

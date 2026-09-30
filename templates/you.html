@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile - AgriVision</title>
+  <style>
+    body.category {
+      margin: 0;
+      padding: 0;
+      background: url("college-bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    body.category::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .profile-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: rgba(0,0,0,0.75);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #ffdd57;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ffdd57;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    .stats {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .stats h2 {
+      color: #76c893;
+      margin-bottom: 10px;
+    }
+
+    .stats ul {
+      list-style: "🌱 ";
+      padding-left: 20px;
+    }
+
+    .stats ul li {
+      margin: 8px 0;
+    }
+
+    .edit-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #28a745;
+      color: white;
+    }
+
+    .edit-btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body class="category">
+  <div class="profile-container">
+    <img src="user.jpg" alt="User Photo" class="profile-pic">
+    <h1 id="username">👤 Your Name</h1>
+    <p id="email">Email: user@example.com</p>
+    <p id="joinDate">Member since: --</p>
+
+    <div class="stats">
+      <h2>📊 Your Activity</h2>
+      <ul>
+        <li id="crops">Added 0 crops</li>
+        <li id="polls">Participated in 0 polls</li>
+        <li id="feedbacks">Shared 0 feedbacks</li>
+        <li id="visits">Visited Community 0 times</li>
+      </ul>
+    </div>
+
+    <button class="edit-btn" onclick="editProfile()">✏️ Edit Profile</button>
+  </div>
+
+  <script>
+    // Example dummy data stored in localStorage (you can set from login page)
+    if (!localStorage.getItem("user")) {
+      localStorage.setItem("user", JSON.stringify({
+        name: "Likitha",
+        email: "likitha@example.com",
+        joinDate: "August 2025",
+        crops: 5,
+        polls: 3,
+        feedbacks: 2,
+        visits: 10
+      }));
+    }
+
+    // Load user data
+    const user = JSON.parse(localStorage.getItem("user"));
+    document.getElementById("username").innerText = "👤 " + user.name;
+    document.getElementById("email").innerText = "Email: " + user.email;
+    document.getElementById("joinDate").innerText = "Member since: " + user.joinDate;
+
+    document.getElementById("crops").innerText = `Added ${user.crops} crops`;
+    document.getElementById("polls").innerText = `Participated in ${user.polls} polls`;
+    document.getElementById("feedbacks").innerText = `Shared ${user.feedbacks} feedbacks`;
+    document.getElementById("visits").innerText = `Visited Community ${user.visits} times`;
+
+    // Edit profile function
+    function editProfile() {
+      let newName = prompt("Enter new name:", user.name);
+      let newEmail = prompt("Enter new email:", user.email);
+
+      if (newName && newEmail) {
+        user.name = newName;
+        user.email = newEmail;
+        localStorage.setItem("user", JSON.stringify(user));
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
